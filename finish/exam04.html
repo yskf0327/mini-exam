@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>問題4 | JavaScript 小テスト</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
+  <body id="exam04">
+    <div class="container my-3">
+      <h1 class="mb-3">問題4 | 関数の定義と呼び出し</h1>
+      <p class="question">下記の仕様に基づいた関数を定義しなさい。</p>
+      <dl>
+        <dt>関数名</dt>
+        <dd>calcDiscountPrice</dd>
+        <dt>引数</dt>
+        <dd>価格、割引率</dd>
+        <dt>戻り値</dt>
+        <dd>割引後の価格</dd>
+        <dt>機能</dt>
+        <dd>引数で受け取った価格と割引率(%)から割引後の価格を計算し、呼び出し元に返す</dd>
+      </dl>
+      <p class="question">【1】で定義した関数を利用し、「計算する」ボタンがクリックされたら、フォームに入力された価格と割引率から割引後の価格を<em>コンソール</em>に表示しなさい。ただし、割引後の価格の端数は切り捨てて整数にすること。</p>
+      <p class="question">【2】で表示した割引後の価格を<em>点線のボックス内</em>の[表示例]のように表示しなさい。</p>
+
+      <div class="row my-4 align-items-center">
+        <div class="col-auto">
+          <label for="price" class="form-label">価格(円)</label>
+          <input type="number" name="price" id="price" min="0" max="1000000" />
+        </div>
+        <div class="col-auto">
+          <label for="discount-rate" class="form-label">割引率(%)</label>
+          <input type="number" name="discount-rate" id="discount-rate" min="0" max="100" />
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary">計算する</button>
+        </div>
+      </div>
+      <div class="box">[表示例]500円の50%引きは250円です。</div>
+      <div class="link-wrapper row my-5"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="assets/js/common.js" type="module"></script>
+    <script>
+      // ここから回答を書く
+      function calcDiscountPrice(price,discountRate){
+        
+      }
+    </script>
+  </body>
+</html>
