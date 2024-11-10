@@ -47,18 +47,6 @@
         },
       ];
       // ここから回答を書く
-      console.log(membersArray[2].age);
-      console.log(membersArray[2].hobby[1]);
-
-      let boxElm = document.querySelector('.box');
-      for (let i = 0; i < membersArray.length; i++) {
-        let text = '<p>' + membersArray[i].name + 'さんは' + membersArray[i].age + '歳で趣味は';
-        for (let j = 0; j < membersArray[i].hobby.length; j++) {
-          text += '[' + membersArray[i].hobby[j] + ']';
-        }
-        text += 'です。';
-        boxElm.innerHTML += text;
-      }
     </script>
   </body>
 </html>

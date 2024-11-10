@@ -1,0 +1,32 @@
+body {
+  counter-reset: num 0;
+}
+
+em {
+  font-weight: bold;
+}
+
+p.question::before {
+  counter-increment: num 1;
+  content: '【 ' counter(num) ' 】';
+  font-weight: bold;
+  margin-inline-end: 0.5em;
+}
+
+.box {
+  border: 2px dotted #999999;
+  padding: 1rem;
+  width: 100%;
+  min-height: 100px;
+  display: grid;
+  place-content: center;
+}
+
+.link-wrapper ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.link-wrapper ul li {
+  text-align: center;
+}

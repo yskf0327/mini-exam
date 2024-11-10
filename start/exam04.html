@@ -49,27 +49,6 @@
     <script src="assets/js/common.js" type="module"></script>
     <script>
       // ここから回答を書く
-      function calcDiscountPrice(price, rate) {
-        let discountPrice = Math.floor(price * (1 - rate / 100));
-        return discountPrice;
-      }
-
-      let btn = document.querySelector('.btn-calc');
-      let errorElm = document.getElementById('error');
-
-      btn.addEventListener('click', function () {
-        errorElm.innerText = '';
-        let price = parseFloat(document.getElementById('price').value);
-        let rate = parseFloat(document.getElementById('discount-rate').value);
-        if (price && rate) {
-          let result = calcDiscountPrice(price, rate);
-          console.log(result);
-          let boxElm = document.querySelector('.box');
-          boxElm.innerText = price + '円の' + rate + '%引きは' + result + '円です。';
-        } else {
-          errorElm.innerText = '適切な値を入力してください';
-        }
-      });
     </script>
   </body>
 </html>

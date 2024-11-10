@@ -26,19 +26,6 @@
     <script src="assets/js/common.js" type="module"></script>
     <script>
       // ここから回答を書く
-      let startBtn = document.querySelector('.btn-start');
-      let box = document.querySelector('.box');
-
-      startBtn.addEventListener('click', function () {
-        let num;
-        let cnt = 0;
-        while (num % 5 !== 0) {
-          num = Math.floor(Math.random() * 100) + 1;
-          console.log(num);
-          cnt++;
-        }
-        box.innerText = '5の倍数「' + num + '」が生成されるまで' + cnt + '回繰り返しました。';
-      });
     </script>
   </body>
 </html>
