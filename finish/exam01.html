@@ -68,6 +68,48 @@
         </div>
       </form>
 
+      <table class="table table-striped mt-4">
+        <thead class="table-dark">
+          <tr>
+            <th>メソッド名</th>
+            <th>引数</th>
+            <th>戻り値</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>getElementById()</td>
+            <td>取得したい要素のid属性の値</td>
+            <td>Elementオブジェクト</td>
+          </tr>
+          <tr>
+            <td>querySelector()</td>
+            <td>取得したい要素がマッチするCSSセレクタ</td>
+            <td>Elementオブジェクト</td>
+          </tr>
+          <tr>
+            <td>querySelectorAll()</td>
+            <td>取得したい要素がマッチするCSSセレクタ</td>
+            <td>NodeListオブジェクト</td>
+          </tr>
+          <tr>
+            <td>getElementsByName()</td>
+            <td>取得したい要素のname属性の値</td>
+            <td>NodeListオブジェクト</td>
+          </tr>
+          <tr>
+            <td>getElementsByClassName()</td>
+            <td>取得したい要素のクラス属性の値</td>
+            <td>HTMLCollectionオブジェクト</td>
+          </tr>
+          <tr>
+            <td>getElementsByTagName()</td>
+            <td>取得したい要素の要素名</td>
+            <td>HTMLCollectionオブジェクト</td>
+          </tr>
+        </tbody>
+      </table>
+
       <div class="link-wrapper row my-5"></div>
     </div>
 
@@ -75,20 +117,27 @@
     <script src="assets/js/common.js" type="module"></script>
     <script>
       // ここから回答を書く
+      // イベント登録用の要素取得
       let calcBtn = document.querySelector('.btn-calc');
+      // 結果表示領域の要素を取得
       let totalQtyElm = document.querySelector('.total-qty');
       let subtotalElmArray = document.querySelectorAll('.subtotal');
       let totalPriceElm = document.querySelector('.total-price');
 
+      // ボタンがクリックされたらー
       calcBtn.addEventListener('click', function () {
-        // 合計点数
+        /***************
+         * 基本編
+         * *************/
+
+        合計点数;
         let qty01 = parseInt(document.getElementById('qty01').value);
         let qty02 = parseInt(document.getElementById('qty02').value);
         let qty03 = parseInt(document.getElementById('qty03').value);
         console.log(qty01 + qty02 + qty03);
         let totalQty = qty01 + qty02 + qty03;
 
-        // 小計
+        小計;
         let subtotal01 = 380 * qty01;
         let subtotal02 = 450 * qty02;
         let subtotal03 = 500 * qty03;
@@ -99,15 +148,67 @@
 
         let subtotalArray = [subtotal01, subtotal02, subtotal03];
 
-        // 合計金額
+        合計金額;
         let totalPrice = subtotal01 + subtotal02 + subtotal03;
         console.log(totalPrice);
 
-        // 表示
+        /***************
+         * 応用編
+         * *************/
+        // 各種データの一時保管用配列を宣言
+        // let drinkNameArray = [];
+        // let qtyArray = [];
+        // let priceArray = [];
+
+        // // 商品名を取得して配列へ追加
+        // document.querySelectorAll('tbody>tr>td:nth-child(2)').forEach((tdElm) => {
+        //   drinkNameArray.push(tdElm.innerText);
+        // });
+
+        // // 注文個数を取得して配列へ追加
+        // document.querySelectorAll('input[name^=qty]').forEach((elm) => {
+        //   qtyArray.push(parseInt(elm.value));
+        // });
+
+        // // 価格を取得して配列へ追加
+        // document.querySelectorAll('[id^=price]').forEach((elm) => {
+        //   priceArray.push(parseInt(elm.innerText));
+        // });
+
+        // // ドリンクのオブジェクトを格納する配列を宣言
+        // let drinkObjArray = [];
+
+        // // 一時保管用の配列のデータをドリンクごとのオブジェクトとしてまとめる
+        // for (let i = 0; i < drinkNameArray.length; i++) {
+        //   drinkObjArray.push({
+        //     name: drinkNameArray[i],
+        //     price: priceArray[i],
+        //     qty: qtyArray[i],
+        //     subtotal: priceArray[i] * qtyArray[i],
+        //   });
+        // }
+
+        // console.log(drinkObjArray);
+
+        // // 色々コンソールに表示
+        // let totalQty = 0;
+        // let totalPrice = 0;
+        // drinkObjArray.forEach((drink) => {
+        //   totalQty += drink.qty;
+        //   console.log(drink.name + 'の小計: ' + drink.subtotal);
+        //   totalPrice += drink.subtotal;
+        // });
+        // console.log(totalQty);
+        // console.log(totalPrice);
+
+        /***************
+         * 基本・応用共通
+         * *************/
+        // ブラウザに表示
         totalQtyElm.innerText = totalQty;
         totalPriceElm.innerText = totalPrice;
         for (let i = 0; i < subtotalElmArray.length; i++) {
-          subtotalElmArray[i].innerText = subtotalArray[i];
+          subtotalElmArray[i].innerText = drinkObjArray[i].subtotal;
         }
       });
     </script>
